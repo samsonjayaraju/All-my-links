@@ -1,0 +1,125 @@
+:root {
+  color-scheme: light;
+  --blue: #2059d5;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "DM Sans Variable", system-ui, sans-serif;
+  color: #000;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: clamp(32px, 7vh, 80px) 20px;
+}
+
+.profile {
+  width: 100%;
+  max-width: 420px;
+}
+
+header { text-align: center; }
+
+.avatar {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 6px 16px rgb(21 35 66 / 9%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .avatar { animation: float 4s ease-in-out infinite; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+h1 {
+  margin: 20px 0 4px;
+  font-size: clamp(32px, 6.7vw, 42px);
+  line-height: 1.12;
+  letter-spacing: -0.052em;
+  font-weight: 720;
+}
+
+.handle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 550;
+}
+
+ul {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  margin: 32px 0 0;
+  list-style: none;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 15px 20px 15px 16px;
+  min-height: 80px;
+  background: #fff;
+  border: 1px solid #becff0;
+  border-radius: 16px;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 150ms, border-color 150ms;
+}
+
+.platform-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  font-size: 26px;
+}
+
+.platform-icon[data-platform="LinkedIn"] {
+  color: #fff;
+  background: #0a66c2;
+}
+
+.platform-icon[data-platform="YouTube"] {
+  color: #ff0033;
+  background: #fff;
+  font-size: 34px;
+}
+
+.platform-icon[data-platform="Instagram"] {
+  color: #fff;
+  background: radial-gradient(circle at 24% 105%, #ffdc80 0%, #fcaf45 16%, #fd5949 38%, #d6249f 65%, #515bd4 95%);
+  font-size: 30px;
+}
+
+.link-text { display: grid; gap: 2px; }
+.link-text strong { font-size: 18px; line-height: 1.3; letter-spacing: -0.025em; }
+.link-text span { font-size: 13px; }
+.arrow { margin-left: auto; font-size: 19px; flex-shrink: 0; }
+
+@media (hover: hover) {
+  a:hover { background: #f5f8ff; border-color: var(--blue); }
+}
+
+a:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+a:active { background: #e9f1ff; }
+
+@media (prefers-reduced-motion: reduce) {
+  a { transition: none; }
+}
