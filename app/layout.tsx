@@ -6,11 +6,12 @@ export const metadata: Metadata = {
   title: "Samson | Social links",
   description: "Find Samson on LinkedIn, YouTube, and Instagram.",
   icons: { icon: "/avatar.webp" },
+  other: { google: "notranslate" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" translate="no">
       <body>{children}</body>
     </html>
   );

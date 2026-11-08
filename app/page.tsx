@@ -34,7 +34,7 @@ export default function Home() {
           <ul>
             {links.map(({ name, account, href, icon: Icon }) => (
               <li key={name}>
-                <a href={href}>
+                <a href={href} target="_blank" rel="noopener noreferrer">
                   <span className="platform-icon" data-platform={name}>
                     <Icon aria-hidden="true" />
                   </span>
